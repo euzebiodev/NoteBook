@@ -1,0 +1,57 @@
+#Roteiro da construção da solução# 
+/home/317311/CAPT/batch/log
+/home/317311/batch/shell
+/home/317311/batch/bin
+/home/317311/wspace/batch-lib/src/BaseBatch
+
+
+cp -rf /home/317311/wspace/batch-lib/build/* /home/SW/batch/lib
+cp -rf /home/317311/wspace/batch-extratores/build/* /home/SW/batch/bin
+
+git branch -D feature/EVO1-198
+
+grep -i anninha /home/SW/CAPT/batch/log/btc_ext_fraude_estorno.log
+cat /home/SW/CAPT/batch/log/SHSW296D.log
+cat /home/SW/CAPT/batch/log/SHSW542D.log
+cat /home/SW/CAPT/batch/log/SHSW536D.log
+cat /home/SW/CAPT/batch/log/SHSW635D.log
+cat /home/SW/CAPT/batch/log/SHSW506D.log
+cat /home/SW/CAPT/batch/log/btc_ext_fraude_estorno.log
+cat /home/SW/CAPT/batch/log/btc_ext_capchfulvan.log
+cat /home/SW/CAPT/batch/log/btc_ext_capdeb.log
+cat /home/SW/CAPT/batch/log/btc_ext_capcredamex.log
+cat /home/SW/CAPT/batch/log/btc_exp_dad_fraude.log
+cat /home/SW/CAPT/batch/tmp/uload/PB/CAPDEB
+
+/home/SW/batch/cfg/batch.cfg
+
+sh /home/SW/batch/shell/SHSW296D.sh
+sh /home/SW/batch/shell/SHSW542D.sh
+sh /home/SW/batch/shell/SHSW536D.sh J3
+sh /home/SW/batch/shell/SHSW635D.sh
+sh /home/SW/batch/shell/SHSW506D.sh -d 20210917
+ 
+compilar fontes: batchmake <pacote>
+ex: 
+batchmake batch-lib
+batchmake batch-deliverable
+batchmake batch-extratores
+batchmake batch-limpeza
+batchmake utilities
+batchmake carga
+batchmake online-limpeza
+batchmake online-decurso_prazo
+batchmake online-deliverable
+batchmake online-conciliacao
+- compilar ambiente de desenvolvimento
+- rodar uma shell pra ver se a combilação tá ok
+	* escolher uma shell que não é de expurgo
+	* ver se tem log (olhar diretorio de log)
+	* rodar a shell
+- remover parametro do arquivo de configuração
+- testar para mostrar que da erro ao tirar ele
+- 
+
+
+
+C:\Users\317311\AppData\Local\Programs\Git\SW77\gen\src\BaseBatch\BaseBatch.cpp
